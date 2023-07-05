@@ -84,3 +84,41 @@ class Insert {
 			System.out.print(arr[i] + " ");
 	}
 }
+
+
+// Delete from an unsorted array
+class UnsortedArray{
+    static int findElement(int arr[],int key,int n){
+        for(int i=0;i<n;i++)
+            if(arr[i]==key)
+            return i;
+        return -1;
+     }
+    static int deleteElement(int arr[],int key,int n){
+         int result = findElement(arr,key,n);
+         if(result==-1)
+             {
+               System.out.println("Element not found.") ;
+               return n;
+             }
+             
+             for(int i=result;i<n-1;i++)
+                 arr[i]=arr[i+1];
+                 return n-1;
+             }
+         
+    public static void main(String args[]){
+        int arr[] = {2,6,5,1,9};
+        int key = 1;
+        int n = arr.length;
+        System.out.println("Array before deletion:");
+        for(int i=0;i<n;i++)
+            System.out.println(arr[i]+ " ");
+            
+         n=deleteElement(arr,key,n);
+            
+         System.out.println("Array after deletion:");
+        for(int i=0;i<n;i++)
+            System.out.println(arr[i]+ " ");
+        }
+    }
